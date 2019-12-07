@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "./Carousel";
+import Carousel from "./Carousel/Carousel";
 import Heading from "./Header";
 import Form from "./Newsletter";
 import Redirect from "./Redirect";
