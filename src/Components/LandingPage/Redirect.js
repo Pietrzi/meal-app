@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Redirect() {
     return (
         <div className='redirect' id='goToApp'>
-            <Wrapper>
+            {/* <Wrapper> */}
                 <div className='redirect__desc'>
                     <div className='redirect__info'>
                         <h3>Lorem ipsum dolor sit amet</h3>
@@ -20,7 +20,7 @@ export default function Redirect() {
                         </button>
                     </div>
                 </div>
-            </Wrapper>
+            {/* </Wrapper> */}
         </div>
     )
 }

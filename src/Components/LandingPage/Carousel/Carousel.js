@@ -6,7 +6,6 @@ import firstMeal from "../../../assets/images/meal1.jpg";
 import secondMeal from "../../../assets/images/meal2.jpg";
 import thirdMeal from "../../../assets/images/meal3.jpg";
 
-//images !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 export default class Carousel extends Component {
     constructor() {
