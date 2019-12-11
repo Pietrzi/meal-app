@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Charmonman");
+
+.application__wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+nav {
+  height: 70px;
+  width: 100%;
+  background-color: #292f32;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.application__logo {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Charmonman;
+  font-size: 1.8rem;
+  margin-left: 20px;
+}
+
+#first {
+  font-weight: 100;
+  color: white;
+}
+#second {
+  color: #e58a20;
+  font-weight: 700;
+}
+
+.application__user {
+  display: flex;
+  align-items: center;
+}
+
+.user__name {
+  color: white;
+  font-size: 1.6rem;
+  margin-right: 20px;
+}
+
+.icon {
+  color: #e58a20;
+  margin-right: 40px;
+}
+
+.application__body {
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+}
+
+.application__options {
+  width: 300px;
+  height: 100%;
+  background-color: #5b605f;
+}
+
+.application__center {
+  width: 100%;
+  height: 100%;
+  //background-image: url('./images/tloapki.png');
+}
+
+.option {
+  height: 70px;
+  width: 100%;
+  padding-left: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-family: sans-serif !important;
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
+.active {
+  border-left: 5px solid #e58a20;
+  padding-left: 15px;
+  position: relative;
+  font-family: "FontAwesome";
+
+  &:after {
+    content: "\f054";
+    position: absolute;
+    right: 10px;
+    color: #e58a20;
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+}
