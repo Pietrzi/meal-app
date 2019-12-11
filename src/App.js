@@ -1,14 +1,15 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import FrontView from './Components/FrontViev';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import FrontView from './Components/Application/FrontViev';
 import LandingPage from './Components/LandingPage/LandingPage';
+import Test from './Components/Test';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Switch>
         <Route exact path='/' component={LandingPage} />
-        <Router path='/app' component={FrontView} />
+        <Route path='/app' component={FrontView} />
       </Switch>
     </Router>
   );

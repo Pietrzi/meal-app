@@ -5,6 +5,8 @@ footer {
   }
   
   .company {
+    width: 90%;
+    margin: 0 auto;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -47,6 +49,8 @@ footer {
           font-weight: bold;
           padding: 10px 20px;
           transition: 0.3s;
+          position: relative;
+          top: 1px;
   
           &:hover {
             background-color: lighten(#ff6600, 10%);
