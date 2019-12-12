@@ -5,6 +5,7 @@ import AppWrapper from './AppWrapper';
 import Pulpit from "./Pulpit";
 import Plany from "./Plany";
 import Przepisy from "./Przepisy";
+import Welcome from './Welcome';
 
 
 class FrontViev extends React.Component {
@@ -59,7 +60,7 @@ class FrontViev extends React.Component {
                     <AppWrapper>
                         <div className='application__center'>
                             <Switch>
-                                {/* <Route path='/app' component={Welcome}></Route> */}
+                                <Route path='/app' component={Welcome}></Route>
                                 <Route path='/app/pulpit' component={Pulpit} />
                                 <Route path='/app/przepisy' component={Przepisy} />
                                 <Route path='/app/plany' component={Plany} />
