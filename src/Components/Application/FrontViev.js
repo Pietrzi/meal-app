@@ -12,11 +12,24 @@ class FrontViev extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: "",
-            path: ""
+            name: "imię"
         }
+        this.giveName = this.giveName.bind(this)
     }
+
+    giveName = e => {
+        const target = e.target;
+        const name = e.name;
+
+        this.setState({
+            [name]: target.value
+        })
+        console.log("click")
+    }
+
     render() {
+        const { name } = this.state;
+        const values = { name }
         return (
             <div className="application__wrapper">
                 <nav>
@@ -29,7 +42,7 @@ class FrontViev extends React.Component {
                     <div className='application__user'>
                         <span className='user__name'>{this.state.user}</span>
                         <i
-                            //   className='fa fa-user-circle-o fa-3x icon'
+                              className='fa fa-user-circle-o fa-3x icon'
                             //   aria-hidden='true'
                             //   onClick={() => this.props.clearUserName()}
                         >
@@ -57,10 +70,10 @@ class FrontViev extends React.Component {
                             <p>Plany</p>
                         </NavLink>
                     </div>
-                    <AppWrapper>
+                    <AppWrapper giveName={this.giveName} values={values}>
                         <div className='application__center'>
                             <Switch>
-                                <Route exact path='/app' component={Welcome}></Route>
+                                <Route giveName={this.giveName} values={values} exact path='/app' component={Welcome}></Route>
                                 <Route path='/app/pulpit' component={Pulpit} />
                                 <Route path='/app/przepisy' component={Przepisy} />
                                 <Route path='/app/plany' component={Plany} />
