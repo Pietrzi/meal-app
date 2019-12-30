@@ -28,8 +28,10 @@ class FrontViev extends React.Component {
     }
 
     render() {
+        const { props } = this.props
         const { name } = this.state;
-        const values = { name }
+        const values = { name };
+        console.log(props)
         return (
             <div className="application__wrapper">
                 <nav>
@@ -40,7 +42,7 @@ class FrontViev extends React.Component {
                         </h1>
                     </Link>
                     <div className='application__user'>
-                        <span className='user__name'>{this.state.user}</span>
+                        <span className='user__name'>{this.props.name}</span>
                         <i
                               className='fa fa-user-circle-o fa-3x icon'
                             //   aria-hidden='true'
@@ -73,7 +75,7 @@ class FrontViev extends React.Component {
                     <AppWrapper giveName={this.giveName} values={values}>
                         <div className='application__center'>
                             <Switch>
-                                <Route giveName={this.giveName} values={values} exact path='/app' component={Welcome}></Route>
+                                <Route gexact path='/app' render={(props) => <Welcome {...props} />}></Route>
                                 <Route path='/app/pulpit' component={Pulpit} />
                                 <Route path='/app/przepisy' component={Przepisy} />
                                 <Route path='/app/plany' component={Plany} />
