@@ -1,20 +1,35 @@
 import React from "react";
 
-const Welcome = () => {
-  return (
-    <div className='welcome'>
-      <h1>Witaj,</h1>
-      <h2>wygląda na to, że jesteś tutaj pierwszy raz!</h2>
-      <form>
-        <input type='text' placeholder='tutaj wpisz jak masz na imię' />
-        <br />
-        <button type='submit'>Gotowe!</button>
-      </form>
-      <p>
-        Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)
-      </p>
-    </div>
-  );
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.input = React.createRef();
+  }
+  
+  // handleSubmit = e => {
+  //   e.prevent
+  // }
+
+  render() {
+    // const {values, takeName} = this.props;
+    return (
+      <div className='welcome'>
+        <h1>Witaj,</h1>
+        <h2>wygląda na to, że jesteś tutaj pierwszy raz!</h2>
+        <form onSubmit={this.props.takeName}>
+          <input type='text' ref={this.input}  />
+          <br />
+          <button type='submit'>Gotowe!</button>
+        </form>
+        <p>
+          Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)
+        </p>
+      </div>
+    );
+  }
+  
 };
 
 export default Welcome;
+
+// name="name" value={values.name} placeholder='tutaj wpisz jak masz na imię' onChange={takeName}

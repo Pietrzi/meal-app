@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FrontView from './Components/Application/FrontViev';
 import LandingPage from './Components/LandingPage/LandingPage';
-import Test from './Components/Test';
+// import Test from './Components/Test';
+import { PropsRoute } from 'react-router-with-props';
 
 class App extends React.Component{
     state = {
@@ -15,8 +16,8 @@ class App extends React.Component{
     return (
       <Router>
         <Switch>
-          <Route exact path='/' render={(props) => <FrontView {...props}  name={ this.state.name }/>}></Route>
-          <Route path='/app' component={FrontView}/>
+          <Route exact path='/' component={LandingPage}></Route>
+          <Route path='/app' render={(props) => <FrontView {...props}  name={ this.state.name }/>}></Route>
         </Switch>
       </Router>
     );
