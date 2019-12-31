@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FrontView from './Components/Application/FrontViev';
 import LandingPage from './Components/LandingPage/LandingPage';
 // import Test from './Components/Test';
-import { PropsRoute } from 'react-router-with-props';
 
 class App extends React.Component{
     state = {
@@ -17,7 +16,8 @@ class App extends React.Component{
       <Router>
         <Switch>
           <Route exact path='/' component={LandingPage}></Route>
-          <Route path='/app' render={(props) => <FrontView {...props}  name={ this.state.name }/>}></Route>
+          <Route exact path='/app' component={FrontView}></Route>
+          {/* <Route path='/app' render={(props) => <FrontView {...props}  name={ this.state.name }/>}></Route> */}
         </Switch>
       </Router>
     );

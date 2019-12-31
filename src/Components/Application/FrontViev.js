@@ -14,25 +14,9 @@ class FrontViev extends React.Component {
         this.state = {
             name: ""
         }
-        this.giveName = this.giveName.bind(this);
-        this.input = React.createRef();
     }
 
 
-    giveName = e => {
-        // const target = e.target;
-        // const name = e.name;
-
-        // this.setState({
-        //     [name]: target.value
-        // })
-        // console.log("click")
-        e.preventDefault();
-        this.setState({
-            name: this.input.current.value
-        })
-    }
-  
 
     render() {
         const { name } = this.state;
@@ -80,7 +64,8 @@ class FrontViev extends React.Component {
                     <AppWrapper giveName={this.giveName} values={values}>
                         <div className='application__center'>
                             <Switch>
-                                <Route gexact path='/app' render={(props) => <Welcome {...props} takeName={this.giveName} values={values} />}></Route>
+                                {/* <Route gexact path='/app' render={(props) => <Welcome {...props} takeName={this.giveName} values={values} />}></Route> */}
+                                <Route path='/app' component={Welcome} />
                                 <Route path='/app/pulpit' component={Pulpit} />
                                 <Route path='/app/przepisy' component={Przepisy} />
                                 <Route path='/app/plany' component={Plany} />

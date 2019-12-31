@@ -1,17 +1,9 @@
 import React from "react";
 
 class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.input = React.createRef();
-  }
   
-  // handleSubmit = e => {
-  //   e.prevent
-  // }
 
   render() {
-    // const {values, takeName} = this.props;
     return (
       <div className='welcome'>
         <h1>Witaj,</h1>
