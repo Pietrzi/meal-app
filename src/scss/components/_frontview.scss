@@ -4,6 +4,7 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 nav {
@@ -98,4 +99,14 @@ h1 {
     font-weight: 300;
     font-size: 1.3rem;
   }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.7);
+  z-index: 2;
 }

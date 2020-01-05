@@ -1,19 +1,23 @@
 import React from 'react';
 import "font-awesome/css/font-awesome.min.css";
 
-const Pulpit = () => {
+class Pulpit extends React.Component {
+
+  render() {
+    const { addPlan, addRecipe } = this.props
+
     return (
         <div className="pulpit">
             <div className="dashboard">
                 <div className="dashboard__widgets">
                     <div className="add_widget__container">
-                        <div className="add_widget__box">
+                        <div onClick={addRecipe} className="add_widget__box">
                             <div className="add__widget recipe">
                                 <i class="fa fa-plus"></i>
                             </div>
                             <p>dodaj przepis</p>
                         </div>
-                        <div className="add_widget__box">
+                        <div onClick={addPlan} className="add_widget__box">
                             <div className="add__widget plan">
                                 <i class="fa fa-plus"></i>
                             </div>
@@ -142,6 +146,8 @@ const Pulpit = () => {
             </div>
         </div>
     )
+  }
+  
 }
 
 export default Pulpit;

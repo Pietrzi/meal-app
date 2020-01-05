@@ -1,19 +1,24 @@
 import React from 'react'
-import { NavLink, Link, Route, Switch, withRouter } from "react-router-dom";
+import { NavLink, Link, Route, Switch,} from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 import AppWrapper from './AppWrapper';
 import Pulpit from "./Pulpit";
 import Plany from "./Plany";
 import Przepisy from "./Przepisy";
 import Welcome from './Welcome';
-
+import Backdrop from './BackDrop';
+import AddPlan from './AddPlan';
+import AddRecipe from './AddRecipe';
 
 class FrontViev extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: "",
-            tempName: ""
+            tempName: "",
+            isBackdrop: false,
+            isAddPlan: false,
+            isAddRecipe: false
         }
     }
 
@@ -37,11 +42,43 @@ class FrontViev extends React.Component {
         this.props.history.push('/app/pulpit');
     }
 
+    closeBackdrop = () => {
+        this.setState({
+            isBackdrop: false,
+            isAddPlan: false,
+            isAddRecipe: false
+        })
+    }
+
+    addPlan = () => {
+        this.setState({
+            isBackdrop: true,
+            isAddPlan: true
+        })
+    }
+
+    addRecipe = () => {
+        console.log("click");
+        this.setState({
+            isAddRecipe: true,
+            isBackdrop: true
+        })
+    }
+
     render() {
-        const { name } = this.state;
-        const values = { name };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe };
+
+        const BackDrop = isBackdrop ? <Backdrop closeBackdrop={this.closeBackdrop} /> : null;
+        const Addplan = isAddPlan ? <AddPlan /> : null;
+        const Addrecipe = isAddRecipe ? <AddRecipe /> : null;
+
         return (
+            
             <div className="application__wrapper">
+                {BackDrop}
+                {Addplan}
+                {Addrecipe}
                 <nav>
                     <Link to='/' className='application__logo'>
                         <h1>
@@ -79,7 +116,7 @@ class FrontViev extends React.Component {
                         <div className='application__center'>
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
-                                <Route path='/app/pulpit' component={Pulpit} ></Route>
+                                <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.addPlan} addRecipe={this.addRecipe} values={values} />}></Route>
                                 <Route path='/app/przepisy' component={Przepisy} />
                                 <Route path='/app/plany' component={Plany} />
                             </Switch>
