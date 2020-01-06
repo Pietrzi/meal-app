@@ -208,15 +208,38 @@ class AddPlan extends React.Component {
                       <h4>Poniedziałek</h4>
                     </td>
                       <td>
-                        <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                          <option value='select' defaultValue={selectedValue}>
+                        <select>
+                          <option>
                             Wybierz przepis
                           </option>
-                          {recipes.map((el) => (
-                            <option key={el.id} value={el.name} id={el.id}>
-                              {el.name}
-                            </option>
-                          ))}
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
                         </select>
                       </td>
                     </tr>
@@ -225,102 +248,240 @@ class AddPlan extends React.Component {
                         <h4>Wtorek</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <h4>Środa</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <h4>Czwartek</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <h4>Piątek</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <h4>Sobota</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <h4>Niedziela</h4>
                       </td>
                         <td>
-                          <select value={selectedValue} onChange={handleChange} id={meal.meal}>
-                            <option value='select' defaultValue={selectedValue}>
+                          <select>
+                            <option>
                               Wybierz przepis
                             </option>
-                            {recipes.map((el) => (
-                              <option key={el.id} value={el.name} id={el.id}>
-                                {el.name}
-                              </option>
-                            ))}
                           </select>
                         </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                     </tr>
                 </tbody>
               </table>
