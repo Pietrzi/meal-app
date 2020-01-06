@@ -1,21 +1,23 @@
-.backdrop {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+// .backdrop {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: rgba(0, 0, 0, 0.5);
+//   }
   
   .addRecipe {
     border: 1px dashed gray;
     background-color: #fffffa;
     color: #4a4a49;
     height: calc(100vh - 70px - 6rem);
+    min-height: 660px;
     margin: 5rem auto;
     width: 75vw;
     padding: 2rem;
     position: relative;
+    z-index: 10;
   
     .close-btn {
       position: absolute;
