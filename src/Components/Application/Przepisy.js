@@ -1,6 +1,5 @@
 import React from 'react';
-// import { fetchRecipes } from '../../redux/recipes/actions';
-// import { connect } from 'react-redux';
+
 
 class Przepisy extends React.Component {
     constructor(props) {
@@ -16,10 +15,6 @@ class Przepisy extends React.Component {
             ]
         }
     }
-
-    // componentDidMount() {
-    //     this.props.fetchRecipes();
-    // }
 
     render() {
 
@@ -67,12 +62,5 @@ class Przepisy extends React.Component {
     }
    
 }
-
-
-// const mapStateToProps = state => ({
-//     recipes: state.recipes.recipes
-// })
-
-// export default connect(mapStateToProps, { fetchRecipes })(Przepisy);
 
 export default Przepisy;

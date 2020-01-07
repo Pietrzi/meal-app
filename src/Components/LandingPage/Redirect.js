@@ -1,11 +1,9 @@
 import React from 'react';
-import Wrapper from '../Wrapper';
 import { Link } from "react-router-dom";
 
 export default function Redirect() {
     return (
         <div className='redirect' id='goToApp'>
-            {/* <Wrapper> */}
                 <div className='redirect__desc'>
                     <div className='redirect__info'>
                         <h3>Lorem ipsum dolor sit amet</h3>
@@ -16,11 +14,10 @@ export default function Redirect() {
                     </div>
                     <div className='redirect__btn'>
                         <button>
-                            <Link to='/app'>Lorem ipsum</Link>
+                            <Link to='/app'>Przejdź do planera</Link>
                         </button>
                     </div>
                 </div>
-            {/* </Wrapper> */}
         </div>
     )
 }

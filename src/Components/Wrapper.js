@@ -1,5 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Wrapper = ({children}) => <div className="wrapper">{children}</div>
+const Wrapper = ({ children }) => <div className='wrapper'>{children}</div>;
 
 export default Wrapper;
