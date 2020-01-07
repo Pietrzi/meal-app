@@ -2,7 +2,9 @@ import React from "react";
 
 class AddPlan extends React.Component {
   render() {
+    const { closeBackdrop } = this.props
     return (
+    <div className="backdrop" onClick={closeBackdrop}>
       <div className='addPlan__container modal '>
           <form className='addPlan__form'>
             <i className='fa fa-times close-btn' aria-hidden='true'></i>
@@ -344,6 +346,7 @@ class AddPlan extends React.Component {
             </div>
           </form>
         </div>
+      </div>
     );
   }
 

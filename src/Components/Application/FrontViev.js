@@ -6,7 +6,6 @@ import Pulpit from "./Pulpit";
 import Plany from "./Plany";
 import Przepisy from "./Przepisy";
 import Welcome from './Welcome';
-import Backdrop from './BackDrop';
 import AddPlan from './AddPlan';
 import AddRecipe from './AddRecipe';
 
@@ -42,12 +41,15 @@ class FrontViev extends React.Component {
         this.props.history.push('/app/pulpit');
     }
 
-    closeBackdrop = () => {
-        this.setState({
-            isBackdrop: false,
-            isAddPlan: false,
-            isAddRecipe: false
-        })
+    closeBackdrop = e => {
+        if (e.target.classList.contains("backdrop")) {
+            this.setState({
+                isBackdrop: false,
+                isAddPlan: false,
+                isAddRecipe: false
+            })
+        }
+        
     }
 
     addPlan = () => {
@@ -69,14 +71,12 @@ class FrontViev extends React.Component {
         const { name, tempName, isBackdrop, isAddPlan, isAddRecipe } = this.state;
         const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe };
 
-        const BackDrop = isBackdrop ? <Backdrop closeBackdrop={this.closeBackdrop} /> : null;
-        const Addplan = isAddPlan ? <AddPlan /> : null;
-        const Addrecipe = isAddRecipe ? <AddRecipe /> : null;
+        const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
+        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop}/> : null;
 
         return (
             
             <div className="application__wrapper">
-                {BackDrop}
                 {Addplan}
                 {Addrecipe}
                 <nav>

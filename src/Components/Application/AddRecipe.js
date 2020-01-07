@@ -27,8 +27,9 @@ export default class AddRecipe extends Component {
         ]
     }
     render() {
+        const { closeBackdrop } = this.props
         return (
-            <div>
+            <div className="backdrop" onClick={closeBackdrop}>
                 <form className='addRecipe'>
                     <div className='addRecipe__header'>
                         <h2>nowy przepis</h2>
