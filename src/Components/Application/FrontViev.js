@@ -17,7 +17,15 @@ class FrontViev extends React.Component {
             tempName: "",
             isBackdrop: false,
             isAddPlan: false,
-            isAddRecipe: false
+            isAddRecipe: false,
+            recipes: [
+                {id: 1, name: "Zupa Pomidorowa", description: "Pyszna zupa pomidorowa z całych pomidorów.", steps: ["Wlej wodę do garnka", "Wrzuć pomidory i zagotuj"], ingredients: ["Pomidory", "Woda"]},
+                {id: 2, name: "Zupa Jarzynowa", description: "Pyszna zupa jarzynowa z całych warzyw.", steps: ["Wlej wodę do garnka", "Wrzuć warzywa i zagotuj"], ingredients: ["Warzywa", "Woda"]},
+                {id: 3, name: "Zupa Szczawiowa", description: "Pyszna zupa szczawiowa z całych szczawiów.", steps: ["Wlej wodę do garnka", "Wrzuć szczaw i zagotuj"], ingredients: ["Szczaw", "Woda"]},
+                {id: 4, name: "Zupa Ogórkowa", description: "Pyszna zupa ogórkowa z całych ogórków.", steps: ["Wlej wodę do garnka", "Wrzuć ogórki i zagotuj"], ingredients: ["Ogórki", "Woda"]},
+                {id: 5, name: "Zupa Cebulowa", description: "Pyszna zupa cebulowa z całych cebul.", steps: ["Wlej wodę do garnka", "Wrzuć cebulę i zagotuj"], ingredients: ["Cebula", "Woda"]},
+                {id: 6, name: "Zupa Truskawkowa", description: "Pyszna zupa truskawkowa z całych truskawek.", steps: ["Wlej wodę do garnka", "Wrzuć truskawki i zagotuj"], ingredients: ["Truskawki", "Woda"]},
+            ]
         }
     }
 
@@ -68,7 +76,7 @@ class FrontViev extends React.Component {
     }
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe } = this.state;
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes } = this.state;
         const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
@@ -117,7 +125,7 @@ class FrontViev extends React.Component {
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.addPlan} addRecipe={this.addRecipe} values={values} />}></Route>
-                                <Route path='/app/przepisy' component={Przepisy} />
+                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} />}></Route>
                                 <Route path='/app/plany' component={Plany} />
                             </Switch>
                         </div>
