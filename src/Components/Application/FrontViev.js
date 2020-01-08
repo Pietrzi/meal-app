@@ -25,7 +25,15 @@ class FrontViev extends React.Component {
                 {id: 4, name: "Zupa Ogórkowa", description: "Pyszna zupa ogórkowa z całych ogórków.", steps: ["Wlej wodę do garnka", "Wrzuć ogórki i zagotuj"], ingredients: ["Ogórki", "Woda"]},
                 {id: 5, name: "Zupa Cebulowa", description: "Pyszna zupa cebulowa z całych cebul.", steps: ["Wlej wodę do garnka", "Wrzuć cebulę i zagotuj"], ingredients: ["Cebula", "Woda"]},
                 {id: 6, name: "Zupa Truskawkowa", description: "Pyszna zupa truskawkowa z całych truskawek.", steps: ["Wlej wodę do garnka", "Wrzuć truskawki i zagotuj"], ingredients: ["Truskawki", "Woda"]},
-            ]
+            ],
+            tempRecipName: "",
+            tempDescription: "",
+            step: "",
+            tempStep: "",
+            tempStpes: [],
+            ingredient: "",
+            tempIngredient: "",
+            tempIngredients: []
         }
     }
 
@@ -60,18 +68,58 @@ class FrontViev extends React.Component {
         
     }
 
-    addPlan = () => {
+    showAddPlan = () => {
         this.setState({
             isBackdrop: true,
             isAddPlan: true
         })
     }
 
-    addRecipe = () => {
+    showAddRecipe = () => {
         console.log("click");
         this.setState({
             isAddRecipe: true,
             isBackdrop: true
+        })
+    }
+
+    passTempThing = e => {
+        const target = e.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
+    addTempStep = e => {
+        e.preventDefault();
+        const step = this.state.tempStep;
+        this.setState({
+            step,
+        })
+        this.setState(state =>{
+            const tempStpes = state.tempStpes.concat(state.step);
+            return {
+                tempStpes,
+                step: ""
+            }
+        })
+    }
+
+    addTempIngredient = e => {
+        e.preventDefault();
+        const ingredient = this.state.tempIngredient;
+        this.setState({
+            ingredient
+        })
+        this.setState(state => {
+            const tempIngredients = state.tempIngredients.concat(state.ingredient);
+            return {
+                tempIngredients,
+                ingredient: ""
+            }
         })
     }
 
@@ -80,7 +128,7 @@ class FrontViev extends React.Component {
         const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
-        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop}/> : null;
+        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} values={values}/> : null;
 
         return (
             
@@ -124,7 +172,7 @@ class FrontViev extends React.Component {
                         <div className='application__center'>
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
-                                <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.addPlan} addRecipe={this.addRecipe} values={values} />}></Route>
+                                <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} values={values} />}></Route>
                                 <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} />}></Route>
                                 <Route path='/app/plany' component={Plany} />
                             </Switch>
