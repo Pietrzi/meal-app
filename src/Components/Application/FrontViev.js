@@ -28,13 +28,59 @@ class FrontViev extends React.Component {
                 {id: 6, name: "Zupa Truskawkowa", description: "Pyszna zupa truskawkowa z całych truskawek.", steps: ["Wlej wodę do garnka", "Wrzuć truskawki i zagotuj"], ingredients: ["Truskawki", "Woda"]},
             ],
             tempRecipName: "",
-            tempDescription: "",
+            tempRecipDescription: "",
             step: "",
             tempStep: "",
             tempSteps: [],
             ingredient: "",
             tempIngredient: "",
-            tempIngredients: []
+            tempIngredients: [],
+            plansId: 3,
+            plans: [
+                {
+                    id: 1,
+                    name: "Wegetariański tydzień",
+                    description: "Długi opis tygodnia bez mięsa.",
+                    weekNumber: 1,
+                    monday: [1,2,3,4,5],
+                    tuesday: [1,2,3,4,5],
+                    wednesday: [1,2,3,4,5],
+                    thrusday: [1,2,3,4,5],
+                    friday: [1,2,3,4,5],
+                    satruday: [1,2,3,4,5],
+                    sunday: [1,2,3,4,5]
+                  },
+                  {
+                    id: 2,
+                    name: "Jadalny tydzień",
+                    description: "Długi opis tygodnia bez potrzeby jedzenia.",
+                    weekNumber: 2,
+                    monday: [1,2,3,4,5],
+                    tuesday: [1,2,3,4,5],
+                    wednesday: [1,2,3,4,5],
+                    thrusday: [1,2,3,4,5],
+                    friday: [1,2,3,4,5],
+                    satruday: [1,2,3,4,5],
+                    sunday: [1,2,3,4,5]
+                  },
+                  {
+                    id: 3,
+                    name: "Wesoły tydzień",
+                    description: "Długi opis tygodnia bez żadnych smutków.",
+                    weekNumber: 3,
+                    monday: [1,2,3,4,5],
+                    tuesday: [1,2,3,4,5],
+                    wednesday: [1,2,3,4,5],
+                    thrusday: [1,2,3,4,5],
+                    friday: [1,2,3,4,5],
+                    satruday: [1,2,3,4,5],
+                    sunday: [1,2,3,4,5]
+                  }
+                ],
+                tempPlanName: "",
+                tempPlanDescription: "",
+                tempWeekNumber: ""
+
         }
     }
 
@@ -131,7 +177,7 @@ class FrontViev extends React.Component {
         const recipe = {
             id: this.state.recipeId,
             name: this.state.tempRecipName,
-            description: this.state.tempDescription,
+            description: this.state.tempRecipDescription,
             steps: this.state.tempStpes,
             ingredients: this.state.tempIngredients
         }
@@ -149,10 +195,10 @@ class FrontViev extends React.Component {
     }
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans };
 
-        const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
+        const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} values={values}/> : null;
         const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
 
         return (
@@ -199,7 +245,7 @@ class FrontViev extends React.Component {
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} values={values} />}></Route>
                                 <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} />}></Route>
-                                <Route path='/app/plany' component={Plany} />
+                                <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} />}></Route>
                             </Switch>
                         </div>
                     </AppWrapper>

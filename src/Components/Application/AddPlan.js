@@ -1,13 +1,12 @@
 import React from "react";
 
-class AddPlan extends React.Component {
-  render() {
-    const { closeBackdrop } = this.props
+const AddPlan = ({ closeBackdrop, passThing, values }) => {
+
     return (
     <div className="backdrop" onClick={closeBackdrop}>
       <div className='addPlan__container modal '>
           <form className='addPlan__form'>
-            <i className='fa fa-times close-btn' aria-hidden='true'></i>
+            {/* <i className='fa fa-times close-btn' aria-hidden='true'></i> */}
             <div className='addPlan_header__box'>
               <h2>NOWY PLAN</h2>
               <button type='submit'>Zapisz i zamknij</button>
@@ -18,9 +17,9 @@ class AddPlan extends React.Component {
                 <h3>Nazwa planu</h3>
                 <input
                     type='text'
-                    name='name'
-                    // value={name}
-                    // onChange={addName}
+                    name='tempPlanName'
+                    value={values.tempPlanName}
+                    onChange={passThing}
                     placeholder='Nazwa planu'
                     // className={name.length <= 0 ? "error" : null}
                   />
@@ -28,21 +27,22 @@ class AddPlan extends React.Component {
                   <div className='addPlan_input__el'>
                     <h3>Opis planu</h3>
                     <textarea
-                      name='description'
+                      name='tempPlanDescription'
                       rows='10'
                       cols='20'
-                      // value={description}
-                      // onChange={addDescription}
+                      value={values.tempPlanDescription}
+                      onChange={passThing}
                       placeholder='Opis planu'></textarea>
                   </div>
                   <div className='addPlan_input__week'>
                     <h3>Numer tygodnia</h3>
                     <input
                       type='number'
+                      name='tempWeekNumber'
                       min='1'
                       max='52'
-                      // value={weekNumber}
-                      // onChange={addWeekNumber}
+                      value={values.tempWeekNumber}
+                      onChange={passThing}
                       className="week_number"
                     />
                   </div>
@@ -348,9 +348,6 @@ class AddPlan extends React.Component {
         </div>
       </div>
     );
-  }
-
-  
 };
 
 export default AddPlan;
