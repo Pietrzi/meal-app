@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 class Pulpit extends React.Component {
 
   render() {
-    const { addPlan, addRecipe } = this.props
+    const { addPlan, addRecipe, values } = this.props;
 
     return (
         
@@ -13,13 +13,13 @@ class Pulpit extends React.Component {
                     <div className="add_widget__container">
                         <div onClick={addRecipe} className="add_widget__box">
                             <div className="add__widget recipe">
-                                <i class="fa fa-plus"></i>
+                                <i className="fa fa-plus"></i>
                             </div>
                             <p>dodaj przepis</p>
                         </div>
                         <div onClick={addPlan} className="add_widget__box">
                             <div className="add__widget plan">
-                                <i class="fa fa-plus"></i>
+                                <i className="fa fa-plus"></i>
                             </div>
                             <p>dodaj plan</p>
                         </div>
@@ -28,40 +28,40 @@ class Pulpit extends React.Component {
                         <div className="info_widget__box">
                             <div className="info_widget__content">
                                 <div className="info_widget__icon first">
-                                    <i class="fa fa-info"></i>
+                                    <i className="fa fa-info"></i>
                                 </div>
                                 <p className="info_widget_paragraph__first">
-                                    Masz już 99 przepisów, nieźle!
+                                    Masz już {values.recipes.length} przepisów, nieźle!
                                 </p>
                             </div>
                             <div className="info_widget__close close_first">
-                                <i class="fa fa-times"></i>
+                                <i className="fa fa-times"></i>
                             </div>
                         </div>
                         <div className="info_widget__box">
                             <div className="info_widget__content">
                                  <div className="info_widget__icon second">
-                                    <i class="fa fa-exclamation"></i>
+                                    <i className="fa fa-exclamation"></i>
                                 </div>
                                 <p className="info_widget_paragraph__second">
                                     Pamiętaj, aby dodać plan!
                                 </p>
                             </div>
                             <div className="info_widget__close close_second ">
-                                <i class="fa fa-times"></i>
+                                <i className="fa fa-times"></i>
                             </div>
                         </div>
                         <div className="info_widget__box">
                             <div className="info_widget__content">
                                 <div className="info_widget__icon third">
-                                    <i class="fa fa-check"></i>
+                                    <i className="fa fa-check"></i>
                                 </div>
                                 <p className="info_widget_paragraph__third">
                                     Świetnie że jesteś! Udanego planowania i smacznego! :)
                                 </p>
                             </div>
                             <div className="info_widget__close close_third">
-                                <i class="fa fa-times"></i>
+                                <i className="fa fa-times"></i>
                             </div>
                         </div>
                     </div>
@@ -131,14 +131,14 @@ class Pulpit extends React.Component {
                   <div className="dashboard__next_page">
                     <div className="dashboard_next_page__box">
                       <div>
-                        <i class="fa fa-angle-double-left"></i>
+                        <i className="fa fa-angle-double-left"></i>
                       </div>
                       <p>poprzedni</p>
                     </div>
                     <div className="dashboard_next_page__box">
                       <p>następny</p>
                       <div>
-                        <i class="fa fa-angle-double-right"></i>
+                        <i className="fa fa-angle-double-right"></i>
                       </div>
                     </div>
                   </div>

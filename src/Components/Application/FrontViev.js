@@ -18,6 +18,7 @@ class FrontViev extends React.Component {
             isBackdrop: false,
             isAddPlan: false,
             isAddRecipe: false,
+            recipeId: 6,
             recipes: [
                 {id: 1, name: "Zupa Pomidorowa", description: "Pyszna zupa pomidorowa z całych pomidorów.", steps: ["Wlej wodę do garnka", "Wrzuć pomidory i zagotuj"], ingredients: ["Pomidory", "Woda"]},
                 {id: 2, name: "Zupa Jarzynowa", description: "Pyszna zupa jarzynowa z całych warzyw.", steps: ["Wlej wodę do garnka", "Wrzuć warzywa i zagotuj"], ingredients: ["Warzywa", "Woda"]},
@@ -118,17 +119,42 @@ class FrontViev extends React.Component {
             const tempIngredients = state.tempIngredients.concat(state.ingredient);
             return {
                 tempIngredients,
-                ingredient: ""
+                ingredient: "",
             }
+        })
+    }
+
+    addRecipe = e => {
+        e.preventDefault();
+        this.setState(prevState => {
+            return {recipeId: prevState.recipeId + 1}
+         })
+        const recipe = {
+            id: this.state.recipeId,
+            name: this.state.tempRecipName,
+            description: this.state.tempDescription,
+            steps: this.state.tempStpes,
+            ingredients: this.state.tempIngredients
+        }
+        this.setState(state =>{
+            const recipes = state.recipes.concat(recipe);
+            return {
+                recipes,
+                tempStpes: [],
+                tempIngredients: [],
+                isBackdrop: false,
+                isAddPlan: false,
+                isAddRecipe: false
+            } 
         })
     }
 
     render() {
         const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe };
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
-        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} values={values}/> : null;
+        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
 
         return (
             
