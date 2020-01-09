@@ -31,7 +31,7 @@ class FrontViev extends React.Component {
             tempDescription: "",
             step: "",
             tempStep: "",
-            tempStpes: [],
+            tempSteps: [],
             ingredient: "",
             tempIngredient: "",
             tempIngredients: []
@@ -77,7 +77,6 @@ class FrontViev extends React.Component {
     }
 
     showAddRecipe = () => {
-        console.log("click");
         this.setState({
             isAddRecipe: true,
             isBackdrop: true
@@ -98,12 +97,12 @@ class FrontViev extends React.Component {
         e.preventDefault();
         const step = this.state.tempStep;
         this.setState({
-            step,
+            step
         })
-        this.setState(state =>{
-            const tempStpes = state.tempStpes.concat(state.step);
+        this.setState(state => {
+            const tempSteps = state.tempSteps.concat(state.step);
             return {
-                tempStpes,
+                tempSteps,
                 step: ""
             }
         })
@@ -150,8 +149,8 @@ class FrontViev extends React.Component {
     }
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop}/> : null;
         const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
