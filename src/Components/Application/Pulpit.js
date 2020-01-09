@@ -5,6 +5,7 @@ class Pulpit extends React.Component {
 
   render() {
     const { addPlan, addRecipe, values } = this.props;
+    const plans = values.plans;
 
     return (
         
@@ -68,7 +69,7 @@ class Pulpit extends React.Component {
                 </div>
                 <div className="dashboard__plan">
                   <div className="dashboard_table__container">
-                    <h4>Twój plan na nr_tygodnia tydzień:</h4>
+                    <h4>Twój plan na {plans[0].weekNumber} tydzień:</h4>
                     <table className="dashboard__table">
                       <thead>
                         <tr className="dashboard_table__header">

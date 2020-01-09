@@ -23,9 +23,11 @@ class FrontViev extends React.Component {
                 {id: 1, name: "Zupa Pomidorowa", description: "Pyszna zupa pomidorowa z całych pomidorów.", steps: ["Wlej wodę do garnka", "Wrzuć pomidory i zagotuj"], ingredients: ["Pomidory", "Woda"]},
                 {id: 2, name: "Zupa Jarzynowa", description: "Pyszna zupa jarzynowa z całych warzyw.", steps: ["Wlej wodę do garnka", "Wrzuć warzywa i zagotuj"], ingredients: ["Warzywa", "Woda"]},
                 {id: 3, name: "Zupa Szczawiowa", description: "Pyszna zupa szczawiowa z całych szczawiów.", steps: ["Wlej wodę do garnka", "Wrzuć szczaw i zagotuj"], ingredients: ["Szczaw", "Woda"]},
-                {id: 4, name: "Zupa Ogórkowa", description: "Pyszna zupa ogórkowa z całych ogórków.", steps: ["Wlej wodę do garnka", "Wrzuć ogórki i zagotuj"], ingredients: ["Ogórki", "Woda"]},
-                {id: 5, name: "Zupa Cebulowa", description: "Pyszna zupa cebulowa z całych cebul.", steps: ["Wlej wodę do garnka", "Wrzuć cebulę i zagotuj"], ingredients: ["Cebula", "Woda"]},
-                {id: 6, name: "Zupa Truskawkowa", description: "Pyszna zupa truskawkowa z całych truskawek.", steps: ["Wlej wodę do garnka", "Wrzuć truskawki i zagotuj"], ingredients: ["Truskawki", "Woda"]},
+                {id: 4, name: "Jajecznica ze szczypiorkiem", description: "Pyszna jajecznica na maśle ze szczypiorkiem.", steps: ["Roztopić masło na patelni", "Wbij jajka na patelnie", "Posól i zetnij jajka mieszająć", "Posyp jajecznicę świerzym szczypiorkiem"], ingredients: ["Jajka", "Szczypiorek", "Masło", "Sól"]},
+                {id: 5, name: "Owsianka", description: "Owsianka z prażonymi pestkami dyni", steps: ["Zalej owsiankę wodą i gotuj 6-8min", "Na patelni spraż pestki z dyni", "Owsiankę na telerzy posyp pestkami i dodaj łyśkę miodu"], ingredients: ["Płatki owsiane", "Woda", "Pestki dyni", "Miód"]},
+                {id: 6, name: "Kiczeri", description: "Ajurwedyjski zdrowy posiłek na ryżu.", steps: ["Roztopić masło klarowane w garnku", "Wrzucić i przysmażyć czerwoną soczewicę", "Dorzycić ryż basmanti brązowy i zalać wrzątkiem", "Gotować ok 35min"], ingredients: ["Czerwona soczewica", "Ryż basmanti brązowy", "Masło klarowane", "Woda"]},
+                {id: 7, name: "Warzywa w kuminie", description: "Warzywa w kuminie z kaszą gryczaną", steps: ["Roztopić masło klarowane na patelni", "Wrzucić i przysmażyć za dużo kuminu", "Dorzycić pokrojone dowolne warzywa i przysmażyć do miękkości", "Ugotować kaszę grycznaną ok 12-14min", "Przed podaniem warzywa posolić i wymieszać"], ingredients: ["Dowolne warzywa", "Kasza gryczana", "Masło klarowane", "Sól jajeczna"]},
+                {id: 8, name: "Gryczane grzanki", description: "Gryczane grzanki z chranową pastą.", steps: ["W piekarniku zrobić kromki gryczanego chleba na tosty", "Zblendować pestki słonecznika z chrzanem", "Posmarować grzanki pastą i dodać po plastrze pomidora"], ingredients: ["Chleb gryczany", "Chrzan", "Pestki słonecznika", "Pomidor"]}
             ],
             tempRecipName: "",
             tempRecipDescription: "",
@@ -39,16 +41,16 @@ class FrontViev extends React.Component {
             plans: [
                 {
                     id: 1,
-                    name: "Wegetariański tydzień",
+                    name: "Smaczny tydzień",
                     description: "Długi opis tygodnia bez mięsa.",
                     weekNumber: 1,
-                    monday: [1,2,3,4,5],
-                    tuesday: [1,2,3,4,5],
-                    wednesday: [1,2,3,4,5],
-                    thrusday: [1,2,3,4,5],
-                    friday: [1,2,3,4,5],
-                    satruday: [1,2,3,4,5],
-                    sunday: [1,2,3,4,5]
+                    monday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Pomidorowa","Kiczeri","Warzywa w kuminie"],
+                    tuesday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Jarzynowa","Warzywa w kuminie","Kiczeri"],
+                    wednesday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Zupa Pomidorowa"],
+                    thrusday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Pomidorowa","Warzywa w kuminie","Kiczeri"],
+                    friday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Jarzynowa","Kiczeri","Warzywa w kuminie"],
+                    satruday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Szczawiowa","Warzywa w kuminie","Zupa Jarzynowa"],
+                    sunday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Pomidorowa","Kiczeri","Warzywa w kuminie"]
                   },
                   {
                     id: 2,
