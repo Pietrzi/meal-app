@@ -82,49 +82,49 @@ class Pulpit extends React.Component {
                           <th>Niedziela</th>
                         </tr>
                         <tr>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
-                          <td>sniadanie</td>
+                          <td>{plans[0].monday[0]}</td>
+                          <td>{plans[0].tuesday[0]}</td>
+                          <td>{plans[0].wednesday[0]}</td>
+                          <td>{plans[0].thursday[0]}</td>
+                          <td>{plans[0].friday[0]}</td>
+                          <td>{plans[0].saturday[0]}</td>
+                          <td>{plans[0].sunday[0]}</td>
                         </tr>
                         <tr>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
-                          <td>drugie sniadanie</td>
+                          <td>{plans[0].monday[1]}</td>
+                          <td>{plans[0].tuesday[1]}</td>
+                          <td>{plans[0].wednesday[1]}</td>
+                          <td>{plans[0].thursday[1]}</td>
+                          <td>{plans[0].friday[1]}</td>
+                          <td>{plans[0].saturday[1]}</td>
+                          <td>{plans[0].sunday[1]}</td>
                         </tr>
                         <tr>
-                          <td>zupa</td>
-                          <td>zupa</td>
-                          <td>zupa</td>
-                          <td>zupa</td>
-                          <td>zupa</td>
-                          <td>zupa</td>
-                          <td>zupa</td>
+                          <td>{plans[0].monday[2]}</td>
+                          <td>{plans[0].tuesday[2]}</td>
+                          <td>{plans[0].wednesday[2]}</td>
+                          <td>{plans[0].thursday[2]}</td>
+                          <td>{plans[0].friday[2]}</td>
+                          <td>{plans[0].saturday[2]}</td>
+                          <td>{plans[0].sunday[2]}</td>
                         </tr>
                         <tr>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
-                          <td>drugie danie</td>
+                          <td>{plans[0].monday[3]}</td>
+                          <td>{plans[0].tuesday[3]}</td>
+                          <td>{plans[0].wednesday[3]}</td>
+                          <td>{plans[0].thursday[3]}</td>
+                          <td>{plans[0].friday[3]}</td>
+                          <td>{plans[0].saturday[3]}</td>
+                          <td>{plans[0].sunday[3]}</td>
                         </tr>
                         <tr>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
-                          <td>kolacja</td>
+                          <td>{plans[0].monday[4]}</td>
+                          <td>{plans[0].tuesday[4]}</td>
+                          <td>{plans[0].wednesday[4]}</td>
+                          <td>{plans[0].thursday[4]}</td>
+                          <td>{plans[0].friday[4]}</td>
+                          <td>{plans[0].saturday[4]}</td>
+                          <td>{plans[0].sunday[4]}</td>
                         </tr>
                       </thead>
                     </table>

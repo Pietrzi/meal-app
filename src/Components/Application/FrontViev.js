@@ -47,9 +47,9 @@ class FrontViev extends React.Component {
                     monday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Pomidorowa","Kiczeri","Warzywa w kuminie"],
                     tuesday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Jarzynowa","Warzywa w kuminie","Kiczeri"],
                     wednesday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Zupa Pomidorowa"],
-                    thrusday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Pomidorowa","Warzywa w kuminie","Kiczeri"],
+                    thursday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Pomidorowa","Warzywa w kuminie","Kiczeri"],
                     friday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Jarzynowa","Kiczeri","Warzywa w kuminie"],
-                    satruday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Szczawiowa","Warzywa w kuminie","Zupa Jarzynowa"],
+                    saturday: ["Jajecznica ze szczypiorkiem","Owsianka","Zupa Szczawiowa","Warzywa w kuminie","Zupa Jarzynowa"],
                     sunday: ["Owsianka","Jajecznica ze szczypiorkiem","Zupa Pomidorowa","Kiczeri","Warzywa w kuminie"]
                   },
                   {

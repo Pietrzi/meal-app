@@ -5,7 +5,7 @@
     min-width: 1065px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   
@@ -68,7 +68,7 @@
   
   .info_widget__container {
     width: 55%;
-    height: 100%;
+    height: 90%;
     background: transparent;
   
     display: flex;
@@ -78,7 +78,7 @@
   }
   
   .info_widget__box {
-    height: 45px;
+    height: 42px;
     width: 100%;
     background: #fffffa;
   
@@ -182,8 +182,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  
     text-align: center;
+    position: relative;
+    bottom: 15px;
   
     h4 {
       color: #f66606;
@@ -211,7 +212,7 @@
 
     td {
       color: #a6a699;
-      padding: 1.2rem 2.2rem;
+      padding: 0.9rem 1.2rem;
       border-bottom: 1px solid #a6a699;
     }
   
