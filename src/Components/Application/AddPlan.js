@@ -1,7 +1,19 @@
 import React from "react";
+import Select from './Select';
 
 const AddPlan = ({ closeBackdrop, passThing, values }) => {
-
+  
+    const row = () => {
+      return (
+        <td>
+        <select>
+          <option>
+            Wybierz przepis
+          </option>
+        </select>
+      </td>
+      )                
+    }
     return (
     <div className="backdrop" onClick={closeBackdrop}>
       <div className='addPlan__container modal '>
@@ -52,19 +64,76 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
               <table className='addPlan__table'>
                 <thead>
                   <tr className='addPlan_table__header'>
-                    <th></th>
-                    <th>Śniadanie</th>
-                    <th>Drugie Śniadanie</th>
-                    <th>Zupa</th>
-                    <th>Drugie Danie</th>
-                    <th>Kolacja</th>
+                    <th>Poniedziałek</th>
+                    <th>Wtorek</th>
+                    <th>Środa</th>
+                    <th>Czwartek</th>
+                    <th>Piątek</th>
+                    <th>Sobota</th>
+                    <th>Niedziela</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
-                      <h4>Poniedziałek</h4>
-                    </td>
+                    <Select values={values}/>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <select>
+                            <option>
+                              Wybierz przepis
+                            </option>
+                          </select>
+                        </td>
+                        <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
                       <td>
                         <select>
                           <option>
@@ -102,9 +171,6 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <h4>Wtorek</h4>
-                      </td>
                         <td>
                           <select>
                             <option>
@@ -113,6 +179,20 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
                         <select>
                           <option>
                             Wybierz przepis
@@ -142,9 +222,6 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <h4>Środa</h4>
-                      </td>
                         <td>
                           <select>
                             <option>
@@ -153,6 +230,20 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                        </select>
+                      </td>
+                      <td>
                         <select>
                           <option>
                             Wybierz przepis
@@ -182,9 +273,6 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <h4>Czwartek</h4>
-                      </td>
                         <td>
                           <select>
                             <option>
@@ -207,112 +295,6 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <h4>Piątek</h4>
-                      </td>
-                        <td>
-                          <select>
-                            <option>
-                              Wybierz przepis
-                            </option>
-                          </select>
-                        </td>
-                        <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <h4>Sobota</h4>
-                      </td>
-                        <td>
-                          <select>
-                            <option>
-                              Wybierz przepis
-                            </option>
-                          </select>
-                        </td>
-                        <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                      <td>
-                        <select>
-                          <option>
-                            Wybierz przepis
-                          </option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <h4>Niedziela</h4>
-                      </td>
-                        <td>
-                          <select>
-                            <option>
-                              Wybierz przepis
-                            </option>
-                          </select>
-                        </td>
-                        <td>
                         <select>
                           <option>
                             Wybierz przepis
