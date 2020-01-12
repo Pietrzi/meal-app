@@ -1,19 +1,19 @@
 import React from "react";
-import Select from './Select';
 
 const AddPlan = ({ closeBackdrop, passThing, values }) => {
   
-    const row = () => {
-      return (
-        <td>
-        <select>
-          <option>
-            Wybierz przepis
-          </option>
-        </select>
-      </td>
-      )                
-    }
+    // const bla = () => {
+    //   return (
+    //     <select>
+    //       <option>
+    //         Wybierz przepis
+    //       </option>
+    //     </select>
+    //   )                
+    // }
+    // for (let i= 1; i <= 7; i++) {
+    //   return "<td> {bla} </td>";
+    // }
     return (
     <div className="backdrop" onClick={closeBackdrop}>
       <div className='addPlan__container modal '>
@@ -75,12 +75,16 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                 </thead>
                 <tbody>
                   <tr>
-                    <Select values={values}/>
                       <td>
                         <select>
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -88,6 +92,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -95,6 +104,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -102,6 +116,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -109,6 +128,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -116,6 +140,23 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
+                        </select>
+                      </td>
+                      <td>
+                        <select>
+                          <option>
+                            Wybierz przepis
+                          </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -125,6 +166,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                             <option>
                               Wybierz przepis
                             </option>
+                            {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                           </select>
                         </td>
                         <td>
@@ -132,6 +178,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -139,6 +190,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -146,6 +202,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -153,6 +214,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -160,6 +226,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -167,6 +238,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -176,6 +252,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                             <option>
                               Wybierz przepis
                             </option>
+                            {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                           </select>
                         </td>
                         <td>
@@ -183,6 +264,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -190,6 +276,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -197,6 +288,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -204,6 +300,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -211,6 +312,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -218,6 +324,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -227,6 +338,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                             <option>
                               Wybierz przepis
                             </option>
+                            {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                           </select>
                         </td>
                         <td>
@@ -234,6 +350,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -241,6 +362,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -248,6 +374,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -255,6 +386,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -262,6 +398,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -269,6 +410,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
@@ -278,6 +424,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                             <option>
                               Wybierz przepis
                             </option>
+                            {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                           </select>
                         </td>
                         <td>
@@ -285,6 +436,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -292,6 +448,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -299,6 +460,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -306,6 +472,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -313,6 +484,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                       <td>
@@ -320,6 +496,11 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           <option>
                             Wybierz przepis
                           </option>
+                          {values.recipes.map((el) => (
+                              <option key={el.id} value={el.name} id={el.id}>
+                                  {el.name}
+                              </option>
+                          ))}
                         </select>
                       </td>
                     </tr>
