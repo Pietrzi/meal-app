@@ -76,7 +76,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                 <tbody>
                   <tr>
                       <td>
-                        <select onChange={passThing} >
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -88,7 +88,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -100,7 +100,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -112,7 +112,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -125,7 +125,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                       </td>
                       <td>
                         <select>
-                          <option onChange={passThing}>
+                          <option onChange={passThing} name="mon1" value={values.mon1}>
                             Wybierz przepis
                           </option>
                           {values.recipes.map((el) => (
@@ -136,7 +136,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -148,7 +148,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -162,7 +162,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                     </tr>
                     <tr>
                         <td>
-                          <select onChange={passThing}>
+                          <select onChange={passThing} name="mon1" value={values.mon1}>
                             <option>
                               Wybierz przepis
                             </option>
@@ -174,7 +174,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -186,7 +186,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -198,7 +198,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -210,7 +210,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -222,7 +222,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -234,7 +234,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -248,7 +248,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                     </tr>
                     <tr>
                         <td>
-                          <select onChange={passThing}>
+                          <select onChange={passThing} name="mon1" value={values.mon1}>
                             <option>
                               Wybierz przepis
                             </option>
@@ -260,7 +260,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -272,7 +272,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -284,7 +284,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -296,7 +296,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -308,7 +308,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -320,7 +320,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -334,7 +334,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                     </tr>
                     <tr>
                         <td>
-                          <select onChange={passThing}>
+                          <select onChange={passThing} name="mon1" value={values.mon1}>
                             <option>
                               Wybierz przepis
                             </option>
@@ -346,7 +346,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -358,7 +358,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -370,7 +370,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -382,7 +382,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -394,7 +394,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -406,7 +406,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -420,7 +420,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                     </tr>
                     <tr>
                         <td>
-                          <select onChange={passThing}>
+                          <select onChange={passThing} name="mon1" value={values.mon1}>
                             <option>
                               Wybierz przepis
                             </option>
@@ -432,7 +432,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                           </select>
                         </td>
                         <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -444,7 +444,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -456,7 +456,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -468,7 +468,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -480,7 +480,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
@@ -492,7 +492,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
                         </select>
                       </td>
                       <td>
-                        <select onChange={passThing}>
+                        <select onChange={passThing} name="mon1" value={values.mon1}>
                           <option>
                             Wybierz przepis
                           </option>
