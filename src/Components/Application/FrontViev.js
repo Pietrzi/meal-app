@@ -60,9 +60,9 @@ class FrontViev extends React.Component {
                     monday: ["Jajecznica ze szczypiorkiem","Gryczane grzanki","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
                     tuesday: ["Gryczane grzanki","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
                     wednesday: ["Jajecznica ze szczypiorkiem","Gryczane grzanki","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
-                    thrusday: ["Gryczane grzanki","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
+                    thursday: ["Gryczane grzanki","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
                     friday: ["Jajecznica ze szczypiorkiem","Gryczane grzanki","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
-                    satruday: ["Gryczane grzanki","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
+                    saturday: ["Gryczane grzanki","Jajecznica ze szczypiorkiem","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"],
                     sunday: ["Jajecznica ze szczypiorkiem","Gryczane grzanki","Zupa Szczawiowa","Kiczeri","Warzywa w kuminie"]
                   },
                   {
@@ -73,9 +73,9 @@ class FrontViev extends React.Component {
                     monday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Szczawiowa","Warzywa w kuminie","Zupa Szczawiowa"],
                     tuesday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Szczawiowa","Warzywa w kuminie","Zupa Szczawiowa"],
                     wednesday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Pomidorowa","Warzywa w kuminie","Zupa Pomidorowa"],
-                    thrusday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Pomidorowa","Warzywa w kuminie","Zupa Pomidorowa"],
+                    thursday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Pomidorowa","Warzywa w kuminie","Zupa Pomidorowa"],
                     friday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Jarzynowa","Warzywa w kuminie","Zupa Jarzynowa"],
-                    satruday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Jarzynowa","Warzywa w kuminie","Zupa Jarzynowa"],
+                    saturday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Jarzynowa","Warzywa w kuminie","Zupa Jarzynowa"],
                     sunday: ["Warzywa w kuminie","Gryczane grzanki","Zupa Jarzynowa","Warzywa w kuminie","Zupa Jarzynowa"]
                   }
                 ],
@@ -236,7 +236,7 @@ class FrontViev extends React.Component {
             const recipes = state.recipes.concat(recipe);
             return {
                 recipes,
-                tempStpes: [],
+                tempSteps: [],
                 tempIngredients: [],
                 isBackdrop: false,
                 isAddPlan: false,
@@ -244,12 +244,50 @@ class FrontViev extends React.Component {
             } 
         })
     }
+    
+    addPlan = e => {
+        e.preventDefault();
+        this.setState(prevState =>{
+            return {plansId: prevState.plansId + 1}
+        })
+        const monday = [this.state.mon1, this.state.mon2, this.state.mon3, this.state.mon4, this.state.mon5];
+        const tuesday = [this.state.tue1, this.state.tue2, this.state.tue3, this.state.tue4, this.state.tue5];
+        const wednesday = [this.state.wed1, this.state.wed2, this.state.wed3, this.state.wed4, this.state.wed5];
+        const thursday = [this.state.thur1, this.state.thur2, this.state.thur3, this.state.thur4, this.state.thur5];
+        const friday = [this.state.fri1, this.state.fri2, this.state.fri3, this.state.fri4, this.state.fri5];
+        const saturday = [this.state.sat1, this.state.sat2, this.state.sat3, this.state.sat4, this.state.sat5];
+        const sunday = [this.state.sun1, this.state.sun2, this.state.sun3, this.state.sun4, this.state.sun5];
+
+        const plan = {
+            id: this.state.plansId,
+            name: this.state.tempPlanName,
+            description: this.state.tempPlanDescription,
+            weekNumber: this.state.tempWeekNumber,
+            monday,
+            tuesday,
+            wednesday,
+            thursday,
+            friday,
+            saturday,
+            sunday
+        }
+        this.setState(state => {
+            const plans = state.plans.concat(plan);
+            return {
+                plans,
+                isBackdrop: false,
+                isAddPlan: false,
+                isAddRecipe: false
+            }
+        })
+    }
+     
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, };
 
-        const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} values={values}/> : null;
+        const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addPlan={this.addPlan} values={values}/> : null;
         const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
 
         return (

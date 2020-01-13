@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddPlan = ({ closeBackdrop, passThing, values }) => {
+const AddPlan = ({ closeBackdrop, passThing, addPlan, values }) => {
   
     // const bla = () => {
     //   return (
@@ -21,7 +21,7 @@ const AddPlan = ({ closeBackdrop, passThing, values }) => {
             {/* <i className='fa fa-times close-btn' aria-hidden='true'></i> */}
             <div className='addPlan_header__box'>
               <h2>NOWY PLAN</h2>
-              <button type='submit'>Zapisz i zamknij</button>
+              <button onClick={addPlan}>Zapisz i zamknij</button>
             </div>
             <div className='addPlan__input'>
               <div className='addPlan_input__box'>

@@ -19,11 +19,11 @@ const AddRecipe = ({ closeBackdrop, passThing, addStep, addIngredient, addRecipe
                             <div className='input-element'>
                                 <h3>Opis przepisu</h3>
                                 <textarea
-                                    name='tempDescription'
+                                    name='tempRecipDescription'
                                     id='description'
                                     cols='30'
                                     rows='10'
-                                    value={values.tempDescription}
+                                    value={values.tempRecipDescription}
                                     onChange={passThing}
                                     placeholder='Opis przepisu'></textarea>
                                     
