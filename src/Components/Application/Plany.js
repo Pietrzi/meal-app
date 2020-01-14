@@ -1,7 +1,7 @@
 import React from 'react';
-import Plan from './Plan';
+// import Plan from './Plan';
 
-const Plany = ({ plans, addPlan }) => {
+const Plany = ({ plans, addPlan, removePlan }) => {
 
         return (
             <div className='recipes__wrapper'>
@@ -21,12 +21,17 @@ const Plany = ({ plans, addPlan }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {plans.map((el) => (
-                      <Plan
-                        key={el.id}
-                        schedule={el}
-                        id={el.id}
-                      />
+                    {plans.map((el, idx) => (
+                      <tr key={idx} id={idx}>
+                        <td>{el.id}</td>
+                        <td>{el.name}</td>
+                        <td>{el.description}</td>
+                        <td>{el.weekNumber}</td>
+                        <td className='icons'>
+                          <i className='edit fa fa-edit'></i>
+                          <i className='delete fa fa-trash' onClick={removePlan}></i>
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>

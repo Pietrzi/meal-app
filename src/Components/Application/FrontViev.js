@@ -315,6 +315,16 @@ class FrontViev extends React.Component {
             }
         })
     }
+    removePlan = (e) => {
+        const planId = e.target.closest("tr").id
+        this.setState(prevState => {
+            let newPlans = prevState.plans.slice();
+            newPlans.splice(planId, 1)
+            return {
+                plans: newPlans
+            }
+        })
+    }
 
     render() {
         const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan } = this.state;
@@ -367,7 +377,7 @@ class FrontViev extends React.Component {
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} nextPlan={this.nextPlan} prevPlan={this.prevPlan} values={values} />}></Route>
                                 <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} removeRecipe={this.removeRecipe} />}></Route>
-                                <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} />}></Route>
+                                <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} removePlan={this.removePlan} />}></Route>
                             </Switch>
                         </div>
                     </AppWrapper>
