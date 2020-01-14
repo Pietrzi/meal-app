@@ -305,6 +305,17 @@ class FrontViev extends React.Component {
         }
     }
 
+    removeRecipe = (e) => {
+        const recipId = e.target.closest("tr").id
+        this.setState(prevState => {
+            let newRecipes = prevState.recipes.slice();
+            newRecipes.splice(recipId, 1)
+            return {
+                recipes: newRecipes
+            }
+        })
+    }
+
     render() {
         const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan } = this.state;
         const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan };
@@ -355,7 +366,7 @@ class FrontViev extends React.Component {
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} nextPlan={this.nextPlan} prevPlan={this.prevPlan} values={values} />}></Route>
-                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} />}></Route>
+                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} removeRecipe={this.removeRecipe} />}></Route>
                                 <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} />}></Route>
                             </Switch>
                         </div>
