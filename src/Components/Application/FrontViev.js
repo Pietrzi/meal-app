@@ -82,6 +82,7 @@ class FrontViev extends React.Component {
                 tempPlanName: "",
                 tempPlanDescription: "",
                 tempWeekNumber: "",
+                currentPlan: 0,
                 mon1: "",
                 mon2: "",
                 mon3: "",
@@ -188,7 +189,8 @@ class FrontViev extends React.Component {
                 step: ""
             }
         })
-        e.target.previousSibling.value = "";
+        const input = document.querySelector("textarea[name='tempStep']");
+        input.value = "";
     }
 
     addTempIngredient = e => {
@@ -204,7 +206,8 @@ class FrontViev extends React.Component {
                 ingredient: ""
             }
         })
-        e.target.previousSibling.value = "";
+        const input = document.querySelector("input[name='tempIngredient']");
+        input.value = "";
     }
 
     addRecipe = e => {
@@ -269,10 +272,42 @@ class FrontViev extends React.Component {
         })
     }
      
+    nextPlan = () => {
+        const plansNumbers = [];
+        for (let i = 0; i < this.state.plans.length; i++) {
+            plansNumbers.push(this.state.plans[i].weekNumber);
+        }
+        if (this.state.currentPlan < plansNumbers.length -1) {
+            this.setState(prevState => {
+                return {currentPlan: prevState.currentPlan + 1}
+            }) 
+        } else {
+            this.setState({
+                currentPlan: 0
+            })
+        }
+    }
+
+    prevPlan = () => {
+        const plansNumbers = [];
+        for (let i = 0; i < this.state.plans.length; i++) {
+            plansNumbers.push(this.state.plans[i].weekNumber);
+        }
+        if (this.state.currentPlan > 0) {
+            this.setState(prevState => {
+                return {currentPlan: prevState.currentPlan - 1}
+            }) 
+        } 
+        else {
+            this.setState({
+                currentPlan: plansNumbers.length -1
+            })
+        }
+    }
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addPlan={this.addPlan} values={values}/> : null;
         const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
@@ -319,7 +354,7 @@ class FrontViev extends React.Component {
                         <div className='application__center'>
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
-                                <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} values={values} />}></Route>
+                                <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} nextPlan={this.nextPlan} prevPlan={this.prevPlan} values={values} />}></Route>
                                 <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} />}></Route>
                                 <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} />}></Route>
                             </Switch>

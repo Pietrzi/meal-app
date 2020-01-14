@@ -1,10 +1,8 @@
 import React from 'react';
 import "font-awesome/css/font-awesome.min.css";
 
-class Pulpit extends React.Component {
+const Pulpit = ({ addPlan, addRecipe, nextPlan, prevPlan, values }) => {
 
-  render() {
-    const { addPlan, addRecipe, values } = this.props;
     const plans = values.plans;
 
     return (
@@ -69,7 +67,15 @@ class Pulpit extends React.Component {
                 </div>
                 <div className="dashboard__plan">
                   <div className="dashboard_table__container">
-                    <h4>Twój plan na {plans[0].weekNumber} tydzień:</h4>
+                    <h4>Twój plan na {values.plans[values.currentPlan].weekNumber} tydzień:</h4>  
+                        {/* <select>
+                        {values.plans.map((el) => (
+                              <option key={el.id} value={el.weekNumber} id={el.id}>
+                                  {el.weekNumber}
+                              </option>
+                        ))}
+                        </select> */}
+                        
                     <table className="dashboard__table">
                       <thead>
                         <tr className="dashboard_table__header">
@@ -82,61 +88,61 @@ class Pulpit extends React.Component {
                           <th>Niedziela</th>
                         </tr>
                         <tr>
-                          <td>{plans[0].monday[0]}</td>
-                          <td>{plans[0].tuesday[0]}</td>
-                          <td>{plans[0].wednesday[0]}</td>
-                          <td>{plans[0].thursday[0]}</td>
-                          <td>{plans[0].friday[0]}</td>
-                          <td>{plans[0].saturday[0]}</td>
-                          <td>{plans[0].sunday[0]}</td>
+                          <td>{plans[values.currentPlan].monday[0]}</td>
+                          <td>{plans[values.currentPlan].tuesday[0]}</td>
+                          <td>{plans[values.currentPlan].wednesday[0]}</td>
+                          <td>{plans[values.currentPlan].thursday[0]}</td>
+                          <td>{plans[values.currentPlan].friday[0]}</td>
+                          <td>{plans[values.currentPlan].saturday[0]}</td>
+                          <td>{plans[values.currentPlan].sunday[0]}</td>
                         </tr>
                         <tr>
-                          <td>{plans[0].monday[1]}</td>
-                          <td>{plans[0].tuesday[1]}</td>
-                          <td>{plans[0].wednesday[1]}</td>
-                          <td>{plans[0].thursday[1]}</td>
-                          <td>{plans[0].friday[1]}</td>
-                          <td>{plans[0].saturday[1]}</td>
-                          <td>{plans[0].sunday[1]}</td>
+                          <td>{plans[values.currentPlan].monday[1]}</td>
+                          <td>{plans[values.currentPlan].tuesday[1]}</td>
+                          <td>{plans[values.currentPlan].wednesday[1]}</td>
+                          <td>{plans[values.currentPlan].thursday[1]}</td>
+                          <td>{plans[values.currentPlan].friday[1]}</td>
+                          <td>{plans[values.currentPlan].saturday[1]}</td>
+                          <td>{plans[values.currentPlan].sunday[1]}</td>
                         </tr>
                         <tr>
-                          <td>{plans[0].monday[2]}</td>
-                          <td>{plans[0].tuesday[2]}</td>
-                          <td>{plans[0].wednesday[2]}</td>
-                          <td>{plans[0].thursday[2]}</td>
-                          <td>{plans[0].friday[2]}</td>
-                          <td>{plans[0].saturday[2]}</td>
-                          <td>{plans[0].sunday[2]}</td>
+                          <td>{plans[values.currentPlan].monday[2]}</td>
+                          <td>{plans[values.currentPlan].tuesday[2]}</td>
+                          <td>{plans[values.currentPlan].wednesday[2]}</td>
+                          <td>{plans[values.currentPlan].thursday[2]}</td>
+                          <td>{plans[values.currentPlan].friday[2]}</td>
+                          <td>{plans[values.currentPlan].saturday[2]}</td>
+                          <td>{plans[values.currentPlan].sunday[2]}</td>
                         </tr>
                         <tr>
-                          <td>{plans[0].monday[3]}</td>
-                          <td>{plans[0].tuesday[3]}</td>
-                          <td>{plans[0].wednesday[3]}</td>
-                          <td>{plans[0].thursday[3]}</td>
-                          <td>{plans[0].friday[3]}</td>
-                          <td>{plans[0].saturday[3]}</td>
-                          <td>{plans[0].sunday[3]}</td>
+                          <td>{plans[values.currentPlan].monday[3]}</td>
+                          <td>{plans[values.currentPlan].tuesday[3]}</td>
+                          <td>{plans[values.currentPlan].wednesday[3]}</td>
+                          <td>{plans[values.currentPlan].thursday[3]}</td>
+                          <td>{plans[values.currentPlan].friday[3]}</td>
+                          <td>{plans[values.currentPlan].saturday[3]}</td>
+                          <td>{plans[values.currentPlan].sunday[3]}</td>
                         </tr>
                         <tr>
-                          <td>{plans[0].monday[4]}</td>
-                          <td>{plans[0].tuesday[4]}</td>
-                          <td>{plans[0].wednesday[4]}</td>
-                          <td>{plans[0].thursday[4]}</td>
-                          <td>{plans[0].friday[4]}</td>
-                          <td>{plans[0].saturday[4]}</td>
-                          <td>{plans[0].sunday[4]}</td>
+                          <td>{plans[values.currentPlan].monday[4]}</td>
+                          <td>{plans[values.currentPlan].tuesday[4]}</td>
+                          <td>{plans[values.currentPlan].wednesday[4]}</td>
+                          <td>{plans[values.currentPlan].thursday[4]}</td>
+                          <td>{plans[values.currentPlan].friday[4]}</td>
+                          <td>{plans[values.currentPlan].saturday[4]}</td>
+                          <td>{plans[values.currentPlan].sunday[4]}</td>
                         </tr>
                       </thead>
                     </table>
                   </div>
                   <div className="dashboard__next_page">
-                    <div className="dashboard_next_page__box">
+                    <div className="dashboard_next_page__box" onClick={prevPlan}>
                       <div>
                         <i className="fa fa-angle-double-left"></i>
                       </div>
                       <p>poprzedni</p>
                     </div>
-                    <div className="dashboard_next_page__box">
+                    <div className="dashboard_next_page__box" onClick={nextPlan}>
                       <p>następny</p>
                       <div>
                         <i className="fa fa-angle-double-right"></i>
@@ -147,9 +153,7 @@ class Pulpit extends React.Component {
             </div>
           
        
-    )
-  }
-  
+    )  
 }
 
 export default Pulpit;
