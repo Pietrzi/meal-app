@@ -18,7 +18,7 @@ class FrontViev extends React.Component {
             isBackdrop: false,
             isAddPlan: false,
             isAddRecipe: false,
-            recipeId: 6,
+            recipeId: 9,
             recipes: [
                 {id: 1, name: "Zupa Pomidorowa", description: "Pyszna zupa pomidorowa z całych pomidorów.", steps: ["Wlej wodę do garnka", "Wrzuć pomidory i zagotuj"], ingredients: ["Pomidory", "Woda"]},
                 {id: 2, name: "Zupa Jarzynowa", description: "Pyszna zupa jarzynowa z całych warzyw.", steps: ["Wlej wodę do garnka", "Wrzuć warzywa i zagotuj"], ingredients: ["Warzywa", "Woda"]},
@@ -37,7 +37,7 @@ class FrontViev extends React.Component {
             ingredient: "",
             tempIngredient: "",
             tempIngredients: [],
-            plansId: 3,
+            plansId: 4,
             plans: [
                 {
                     id: 1,
@@ -87,51 +87,36 @@ class FrontViev extends React.Component {
                 mon3: "",
                 mon4: "",
                 mon5: "",
-                mon6: "",
-                mon7: "",
                 tue1: "",
                 tue2: "",
                 tue3: "",
                 tue4: "",
                 tue5: "",
-                tue6: "",
-                tue7: "",
                 wed1: "",
                 wed2: "",
                 wed3: "",
                 wed4: "",
                 wed5: "",
-                wed6: "",
-                wed7: "",
                 thur1: "",
                 thur2: "",
                 thur3: "",
                 thur4: "",
                 thur5: "",
-                thur6: "",
-                thur7: "",
                 fri1: "",
                 fri2: "",
                 fri3: "",
                 fri4: "",
                 fri5: "",
-                fri6: "",
-                fri7: "",
                 sat1: "",
                 sat2: "",
                 sat3: "",
                 sat4: "",
                 sat5: "",
-                sat6: "",
-                sat7: "",
                 sun1: "",
                 sun2: "",
                 sun3: "",
                 sun4: "",
-                sun5: "",
-                sun6: "",
-                sun7: "",
-
+                sun5: ""
         }
     }
 
@@ -203,6 +188,7 @@ class FrontViev extends React.Component {
                 step: ""
             }
         })
+        e.target.previousSibling.value = "";
     }
 
     addTempIngredient = e => {
@@ -215,9 +201,10 @@ class FrontViev extends React.Component {
             const tempIngredients = state.tempIngredients.concat(state.ingredient);
             return {
                 tempIngredients,
-                ingredient: "",
+                ingredient: ""
             }
         })
+        e.target.previousSibling.value = "";
     }
 
     addRecipe = e => {
@@ -333,8 +320,8 @@ class FrontViev extends React.Component {
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} values={values} />}></Route>
-                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} />}></Route>
-                                <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} />}></Route>
+                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} />}></Route>
+                                <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} />}></Route>
                             </Switch>
                         </div>
                     </AppWrapper>

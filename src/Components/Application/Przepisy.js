@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Przepisy = ({ recipes }) => {
+const Przepisy = ({ recipes, addRecipe }) => {
    
         const recipesList = recipes.length ? (
             recipes.map(recip => {
@@ -25,7 +25,7 @@ const Przepisy = ({ recipes }) => {
             <div className="recipes__wrapper">
                 <div className="recipes__header">
                     <h2>Lista Przepisów</h2>
-                    <i class="fa fa-plus-square"></i>
+                    <i className="fa fa-plus-square" onClick={addRecipe}></i>
                 </div>
                 <div className="table__container">
                     <table>

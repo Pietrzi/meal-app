@@ -1,13 +1,13 @@
 import React from 'react';
 import Plan from './Plan';
 
-const Plany = ({ plans }) => {
+const Plany = ({ plans, addPlan }) => {
 
         return (
             <div className='recipes__wrapper'>
               <div className='recipes__header'>
                 <h2>Lista Przepisów</h2>
-                <i className='fa fa-plus-square'></i>
+                <i className='fa fa-plus-square' onClick={addPlan}></i>
               </div>
               <div className='table__container'>
                 <table>
