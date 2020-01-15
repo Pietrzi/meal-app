@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/meal-planner/static/css/main.31fddcf5.chunk.css",
+    "main.js": "/meal-planner/static/js/main.0746c259.chunk.js",
+    "main.js.map": "/meal-planner/static/js/main.0746c259.chunk.js.map",
+    "runtime-main.js": "/meal-planner/static/js/runtime-main.3b9746d4.js",
+    "runtime-main.js.map": "/meal-planner/static/js/runtime-main.3b9746d4.js.map",
+    "static/css/2.eb0dd858.chunk.css": "/meal-planner/static/css/2.eb0dd858.chunk.css",
+    "static/js/2.25087773.chunk.js": "/meal-planner/static/js/2.25087773.chunk.js",
+    "static/js/2.25087773.chunk.js.map": "/meal-planner/static/js/2.25087773.chunk.js.map",
+    "index.html": "/meal-planner/index.html",
+    "precache-manifest.3a38479507f7b1452beae5cc47c0ab6c.js": "/meal-planner/precache-manifest.3a38479507f7b1452beae5cc47c0ab6c.js",
+    "service-worker.js": "/meal-planner/service-worker.js",
+    "static/css/2.eb0dd858.chunk.css.map": "/meal-planner/static/css/2.eb0dd858.chunk.css.map",
+    "static/css/main.31fddcf5.chunk.css.map": "/meal-planner/static/css/main.31fddcf5.chunk.css.map",
+    "static/js/2.25087773.chunk.js.LICENSE": "/meal-planner/static/js/2.25087773.chunk.js.LICENSE",
+    "static/media/author.jpg": "/meal-planner/static/media/author.1e704525.jpg",
+    "static/media/font-awesome.min.css": "/meal-planner/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/meal1.jpg": "/meal-planner/static/media/meal1.6be1d45a.jpg",
+    "static/media/meal2.jpg": "/meal-planner/static/media/meal2.be394d89.jpg",
+    "static/media/meal3.jpg": "/meal-planner/static/media/meal3.27ac60b5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b9746d4.js",
+    "static/css/2.eb0dd858.chunk.css",
+    "static/js/2.25087773.chunk.js",
+    "static/css/main.31fddcf5.chunk.css",
+    "static/js/main.0746c259.chunk.js"
+  ]
+}
