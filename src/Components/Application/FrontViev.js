@@ -8,6 +8,7 @@ import Przepisy from "./Przepisy";
 import Welcome from './Welcome';
 import AddPlan from './AddPlan';
 import AddRecipe from './AddRecipe';
+import EditRecipe from './EditRecipe';
 
 class FrontViev extends React.Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class FrontViev extends React.Component {
             ingredient: "",
             tempIngredient: "",
             tempIngredients: [],
+            isEditRecipe: false,
             plansId: 4,
             plans: [
                 {
@@ -166,6 +168,15 @@ class FrontViev extends React.Component {
         })
     }
 
+    showEditRecipe = e => {
+        //const recipId = e.target.closest("tr").id
+        this.setState({
+            isBackdrop: true,
+            isEditRecipe: true,
+            //tempRecipName: this.state.recipes[recipId].name
+        })
+    }
+
     passTempThing = e => {
         const target = e.target;
         const value = target.value;
@@ -230,7 +241,8 @@ class FrontViev extends React.Component {
                 tempIngredients: [],
                 isBackdrop: false,
                 isAddPlan: false,
-                isAddRecipe: false
+                isAddRecipe: false,
+                isEditRecipe: false
             } 
         })
     }
@@ -350,17 +362,19 @@ class FrontViev extends React.Component {
     }
 
     render() {
-        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan } = this.state;
-        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan };
+        const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan, isEditRecipe } = this.state;
+        const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan, isEditRecipe };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addPlan={this.addPlan} values={values}/> : null;
         const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} removeIngredient={this.removeIngredient} removeStep={this.removeStep} values={values}/> : null;
+        const EditRecipe = isEditRecipe ? <EditRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} removeIngredient={this.removeIngredient} removeStep={this.removeStep} values={values}/> : null;
 
         return (
             
             <div className="application__wrapper">
                 {Addplan}
                 {Addrecipe}
+                {EditRecipe}
                 <nav>
                     <Link to='/' className='application__logo'>
                         <h1>
@@ -399,7 +413,7 @@ class FrontViev extends React.Component {
                             <Switch>
                                 <Route exact path='/app' render={(props) => <Welcome {...props} passName={this.passName} addName={this.addName} values={values} />}></Route>
                                 <Route path='/app/pulpit' render={(props) => <Pulpit {...props} addPlan={this.showAddPlan} addRecipe={this.showAddRecipe} nextPlan={this.nextPlan} prevPlan={this.prevPlan} values={values} />}></Route>
-                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} removeRecipe={this.removeRecipe} />}></Route>
+                                <Route path='/app/przepisy' render={(props) => <Przepisy {...props} recipes={recipes} addRecipe={this.showAddRecipe} removeRecipe={this.removeRecipe} showEditRecipe={this.showEditRecipe} />}></Route>
                                 <Route path='/app/plany' render={(props) => <Plany {...props} plans={plans} addPlan={this.showAddPlan} removePlan={this.removePlan} />}></Route>
                             </Switch>
                         </div>

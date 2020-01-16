@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Przepisy = ({ recipes, addRecipe, removeRecipe }) => {
+const Przepisy = ({ recipes, addRecipe, removeRecipe, showEditRecipe }) => {
    
         const recipesList = recipes.length ? (
             recipes.map((recip, idx) => {
@@ -11,7 +11,7 @@ const Przepisy = ({ recipes, addRecipe, removeRecipe }) => {
                         <td>{recip.name}</td>
                         <td>{recip.description}</td>
                         <td className="icons">
-                            <i className="edit" class="fa fa-edit"></i>
+                            <i className="edit" class="fa fa-edit" onClick={showEditRecipe}></i>
                             <i className="delete" class="fa fa-trash" onClick={removeRecipe}></i>
                         </td>
                     </tr>
