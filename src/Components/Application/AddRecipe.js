@@ -1,7 +1,7 @@
 import React from 'react';
 import "font-awesome/css/font-awesome.min.css";
 
-const AddRecipe = ({ closeBackdrop, passThing, addStep, addIngredient, addRecipe, values }) => {
+const AddRecipe = ({ closeBackdrop, passThing, addStep, addIngredient, addRecipe, removeIngredient, removeStep, values }) => {
 
         return (
             <div className="backdrop" onClick={closeBackdrop}>
@@ -54,10 +54,10 @@ const AddRecipe = ({ closeBackdrop, passThing, addStep, addIngredient, addRecipe
                                 <ol>
                                     {values.tempSteps ? (
                                         values.tempSteps.map((step, idx) => (
-                                            <li key={idx}>
+                                            <li key={idx} id={idx}>
                                                 {step}
                                                 <i className='fa fa-edit'></i>
-                                                <i className='fa fa-trash-o' aria-hidden='true'></i>
+                                                <i className='fa fa-trash-o' aria-hidden='true' onClick={removeStep}></i>
                                             </li>
                                     ))
                                     ) : null
@@ -79,10 +79,10 @@ const AddRecipe = ({ closeBackdrop, passThing, addStep, addIngredient, addRecipe
                                     <ul>
                                         {values.tempIngredients ? (
                                             values.tempIngredients.map((ingredient, idx) => (
-                                                <li key={idx}>
+                                                <li key={idx} id={idx}>
                                                     {ingredient}
                                                     <i className='fa fa-edit'></i>
-                                                    <i className='fa fa-trash-o' aria-hidden='true'></i>
+                                                    <i className='fa fa-trash-o' aria-hidden='true' onClick={removeIngredient}></i>
                                                 </li>
                                             ))
                                         ) : null

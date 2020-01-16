@@ -315,6 +315,7 @@ class FrontViev extends React.Component {
             }
         })
     }
+
     removePlan = (e) => {
         const planId = e.target.closest("tr").id
         this.setState(prevState => {
@@ -326,12 +327,34 @@ class FrontViev extends React.Component {
         })
     }
 
+    removeIngredient = (e) => {
+        const ingredientId = e.target.closest("li").id
+        this.setState(prevState => {
+            let newTempIgredients = prevState.tempIngredients.slice();
+            newTempIgredients.splice(ingredientId, 1)
+            return {
+                tempIngredients: newTempIgredients
+            }
+        })
+    }
+
+    removeStep = (e) => {
+        const stepId = e.target.closest("li").id
+        this.setState(prevState => {
+            let newTempSteps = prevState.tempSteps.slice();
+            newTempSteps.splice(stepId, 1)
+            return {
+                tempSteps: newTempSteps
+            }
+        })
+    }
+
     render() {
         const { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan } = this.state;
         const values = { name, tempName, isBackdrop, isAddPlan, isAddRecipe, recipes, tempSteps, tempIngredients, plans, currentPlan };
 
         const Addplan = isAddPlan ? <AddPlan closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addPlan={this.addPlan} values={values}/> : null;
-        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} values={values}/> : null;
+        const Addrecipe = isAddRecipe ? <AddRecipe closeBackdrop={this.closeBackdrop} passThing={this.passTempThing} addStep={this.addTempStep} addIngredient={this.addTempIngredient} addRecipe={this.addRecipe} removeIngredient={this.removeIngredient} removeStep={this.removeStep} values={values}/> : null;
 
         return (
             
