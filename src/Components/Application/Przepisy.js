@@ -11,7 +11,7 @@ const Przepisy = ({ recipes, addRecipe, removeRecipe, showEditRecipe }) => {
                         <td>{recip.name}</td>
                         <td>{recip.description}</td>
                         <td className="icons">
-                            <i className="edit" class="fa fa-edit" onClick={showEditRecipe}></i>
+                            <i className="edit" class="fa fa-edit"></i>
                             <i className="delete" class="fa fa-trash" onClick={removeRecipe}></i>
                         </td>
                     </tr>
